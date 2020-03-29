@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Screen.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Calculate.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Optics.h">

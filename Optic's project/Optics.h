@@ -7,3 +7,5 @@ class Source;
 class Ray;
 
 class Screen;
+
+class Calculate;
