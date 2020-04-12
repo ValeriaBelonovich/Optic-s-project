@@ -152,11 +152,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Lense.cpp" />
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Optic%27s project.cpp" />
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Ray.cpp" />
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Screen.cpp" />
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Source.cpp" />
     <ClCompile Include="Calculate.cpp" />
   </ItemGroup>
   <ItemGroup>

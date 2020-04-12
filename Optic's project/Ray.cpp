@@ -1,6 +1,6 @@
 ﻿#include "Optics.h"
 #include <utility>
->
+
 class Ray
 {
 public:
@@ -10,8 +10,4 @@ public:
 	auto coordinates()// вывод координат для расчета аберраций, не уверенна в типе
 	{}
 
-//private:
-	std::array<int>[3] begin; //начало луча
-	std::array<int>[3] end; //конец луча
-	std::array<int>[3] cos// направляющие косинусы
 };

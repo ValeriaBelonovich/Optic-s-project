@@ -1,7 +1,8 @@
 ﻿#include "Optics.h"
+#include "Ray.cpp"
 #include <valarray>
 #include <cmath>
-#include <boost/math/special_functions/sign.hpp>
+#include <boost/math/special_functions/sign.hpp> //обожаю прогу
 
 class Lense
 {
@@ -19,7 +20,7 @@ private:
 	std::valarray<double> slu();
 
 private:
-	std::valarray<double>[3] centre; //координаты центра
+	std::valarray<double> centre; //координаты центра
 	double length; //длина
 	double n; // показатель преломления
 	double r_left; //левый радиус кривизны
@@ -28,13 +29,13 @@ private:
 
 std::valarray<double> Lense::intersection(Ray& ray, double r) //ищем пересечние луча со сферической поверхностью заданного радиуса кривизны
 {
-	std::valarray<double>[3] result;
+	std::valarray<double> result;
 	double centre_curve = centre[0] + boost::math::sign(r)*sqrt(pow(r, 2) + pow(length / 2, 2)); //центр  кривизны поверхности
-	a = pow(ray.x, 2) + pow(ray.y, 2) + pow(ray.z, 2); // коэффициенты в получающемся квадратном уравнении
-	b = 2 * (ray.x * (ray.begin[0] - centre_curve) + ray.y * ray.begin[1] + ray.z * ray.begin[2]);
-	c = pow(ray.begin[0], 2) + pow(ray.begin[1], 2) + pow(ray.begin[2], 2) + pow(centre_curve, 2) - pow(r, 2);
+	double a = pow(ray.x, 2) + pow(ray.y, 2) + pow(ray.z, 2); // коэффициенты в получающемся квадратном уравнении
+	double b = 2 * (ray.x * (ray.begin[0] - centre_curve) + ray.y * ray.begin[1] + ray.z * ray.begin[2]);
+	double c = pow(ray.begin[0], 2) + pow(ray.begin[1], 2) + pow(ray.begin[2], 2) + pow(centre_curve, 2) - pow(r, 2);
 
-	discriminant = pow(b, 2) - 4 * a * c;
+	double discriminant = pow(b, 2) - 4 * a * c;
 
 	if (discriminant > 0)
 	{

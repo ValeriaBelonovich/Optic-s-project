@@ -15,21 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Optic%27s project.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Lense.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Ray.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Source.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Optic%27s project\Optic%27s project\Screen.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Calculate.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
