@@ -8,8 +8,11 @@ namespace Opticsproject
     {
         std::cout << "Programm started" << std::endl;
         std::string a = system;
+        std::cout << "Parse started" << std::endl;
         json j = json::parse(a);
+        std::cout << "Parse ended" << std::endl;
         System sys(j);
+        std::cout << "Programm inited, not run" << std::endl;
         sys.run();
         std::cout << "Programm ended: " << sys.get_result().dump()<< std::endl;
         return sys.get_result().dump();
