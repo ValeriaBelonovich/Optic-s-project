@@ -33,9 +33,8 @@ dot Lense::intersection(Ray& ray, double r)
 		centre_curve[0] += boost::math::sign(r) * sqrt(pow(r, 2) - pow(length / 2, 2));
 
 		double a = boost::numeric::ublas::inner_prod(ray.cos, ray.cos);
-		double b = 2 * (boost::numeric::ublas::inner_prod(ray.begin,ray.cos)-centre_curve[0]*ray.cos[0]);
-		double c = boost::numeric::ublas::inner_prod(ray.begin, ray.begin) - pow(r, 2) + pow(centre_curve[0],2)
-			- 2*centre_curve[0]*ray.cos[0];
+		double b = 2 * boost::numeric::ublas::inner_prod(ray.begin - centre_curve,ray.cos);
+		double c = boost::numeric::ublas::inner_prod(ray.begin - centre_curve, ray.begin - centre_curve) - pow(r, 2);
 
 		double discriminant = b * b - 4 * a * c;
 
@@ -50,16 +49,27 @@ dot Lense::intersection(Ray& ray, double r)
 				t = (-b - sqrt(discriminant)) / (2 * a);
 				if (t > eps)
 				{
-					result += ray.cos * t;
-					return result;
+					if ((result[0] + ray.cos[0] * t) < result[0] + length/2)
+					{
+						result += ray.cos * t;
+						return result;
+					}
+					else
+					{
+						return result;
+					}
 				}
 			}
 			else
 			{
 				t = (-b + sqrt(discriminant)) / (2 * a);
-				if (t > eps)
+				if ((result[0] + ray.cos[0] * t) < result[0] + length / 2)
 				{
 					result += ray.cos * t;
+					return result;
+				}
+				else
+				{
 					return result;
 				}
 			}
@@ -107,7 +117,7 @@ Ray Lense::refraction(Ray& ray,double r)
 		}
 		else
 		{
-			beta = std::asin(ray.n * sin(alpha) / n);
+			beta = std::asin(sin(alpha) / n);
 			ray.n = n;
 		}
 
