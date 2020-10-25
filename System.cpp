@@ -52,7 +52,7 @@ namespace Opticsproject
 	void System::run()
 	{
 		std::cout << "System run started" << std::endl;
-		size_t discr = 10;//задается
+		size_t discr = 100;//задается
 		double aperture_temp = 0.5;  //TODO сделать функцию апертуры
 		
 		for (size_t i = 0; i < sources.size(); ++i)
